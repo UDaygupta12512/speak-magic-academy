@@ -1,0 +1,1 @@
+ALTER TABLE public.user_progress ADD COLUMN goal_streak integer NOT NULL DEFAULT 0;

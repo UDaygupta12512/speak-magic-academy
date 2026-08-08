@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Accessible focus ring on all interactive controls */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+/* SpeakGenie Design System - Playful & Child-Friendly */
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 174 83% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 32 95% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 291 64% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 174 83% 45%;
+
+    --radius: 1rem;
+
+    /* SpeakGenie Custom Colors */
+    --turquoise: 174 83% 45%;
+    --turquoise-light: 174 83% 92%;
+    --orange: 32 95% 55%;
+    --orange-light: 32 95% 92%;
+    --pink: 350 80% 65%;
+    --pink-light: 350 80% 92%;
+    --purple: 270 70% 65%;
+    --purple-light: 270 70% 92%;
+    --green: 152 69% 45%;
+    --green-light: 152 69% 92%;
+    --yellow: 45 93% 58%;
+    --yellow-light: 45 93% 92%;
+
+    /* Sidebar - not used in mobile but keeping for compatibility */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 174 83% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 83% 95%;
+    --sidebar-accent-foreground: 174 83% 35%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 174 83% 45%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 174 83% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 32 95% 55%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 291 64% 60%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 174 83% 50%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 240 5% 95%;
+    --sidebar-primary: 174 83% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 15%;
+    --sidebar-accent-foreground: 240 5% 95%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 174 83% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito antialiased;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .card-turquoise {
+    @apply bg-gradient-to-br from-[hsl(var(--turquoise))] to-[hsl(180,70%,40%)];
+  }
+  .card-orange {
+    @apply bg-gradient-to-br from-[hsl(var(--orange))] to-[hsl(25,90%,50%)];
+  }
+  .card-pink {
+    @apply bg-gradient-to-br from-[hsl(var(--pink))] to-[hsl(340,75%,55%)];
+  }
+  .card-purple {
+    @apply bg-gradient-to-br from-[hsl(var(--purple))] to-[hsl(280,65%,55%)];
+  }
+  .card-green {
+    @apply bg-gradient-to-br from-[hsl(var(--green))] to-[hsl(165,60%,40%)];
+  }
+  .card-yellow {
+    @apply bg-gradient-to-br from-[hsl(var(--yellow))] to-[hsl(38,90%,50%)];
+  }
+  
+  .safe-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
